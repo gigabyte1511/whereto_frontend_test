@@ -16,6 +16,7 @@ Build a simple web application for browsing music albums.
 1. Get 10 most recently added albums from Subsonic API and view albums in carousel
 2. Displaying detailed information about the album by clicking on the icon in the carousel.
 3. Scrolling the album carousel past the left or right end of the list leads to the other end. (cycle scroll)
+4. Album gallery have left and right buttons to scroll.
 
 ## Technology stack:
 - React
