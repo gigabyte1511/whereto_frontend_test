@@ -25,7 +25,9 @@ function Main() {
   if (isError) {
     return (
       <div className={styles.container}>
-        error
+        <h1>
+          error
+        </h1>
       </div>
     )
   }

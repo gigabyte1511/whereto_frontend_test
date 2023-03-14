@@ -27,6 +27,7 @@
     border: 1px solid #ccc;  /* границы между строками */
 }
 .table td, th {
+    padding: 3px;
     border: 1px solid #ccc;  /* границы между столбцами */
     color: rgb(43, 43, 43);
 }

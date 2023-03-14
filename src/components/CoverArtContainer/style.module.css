@@ -1,3 +1,8 @@
+.container{
+    background-color:antiquewhite;
+    border-radius: 10px;
+    padding: 10px;
+}
 .wrapper_scrollable{
     overflow-y: scroll;
     width: 615px;
@@ -5,9 +10,4 @@
 .cover_art_container{
     display: flex;
     gap: 5px;    
-}
-.container{
-    background-color:antiquewhite;
-    border-radius: 10px;
-    padding: 10px;
 }

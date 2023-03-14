@@ -10,7 +10,7 @@ export const GET_ALBUM_BY_ID_QUERY_KEY = 'GET_ALBUM_BY_ID_QUERY_KEY'
 function AlbumDetail() {
   const { state: albumID } = useLocation()
   const {
-    data, isLoading, isSuccess, isError,
+    data, error, isLoading, isSuccess, isError,
   } = useQuery({
     queryKey: [GET_ALBUM_BY_ID_QUERY_KEY, albumID],
     queryFn: getAlbumById,
@@ -26,15 +26,13 @@ function AlbumDetail() {
   if (isError) {
     return (
       <div className={styles.container}>
-        error
+        {`Error: ${error}`}
       </div>
     )
   }
   if (isSuccess) {
-    console.log(data)
-
     const $songsMass = data.song.map((song, index) => (
-      <tr>
+      <tr key={song.id}>
         <td>{index + 1}</td>
         <td>{song.title}</td>
       </tr>
@@ -46,29 +44,9 @@ function AlbumDetail() {
           <h1>{data.name}</h1>
           <h2>{data.artist}</h2>
         </div>
-        <table
-          className={styles.table}
-        >
+        <table className={styles.table}>
           <caption>Album track list</caption>
           <tbody>
-            {/* <tr>
-            <th>Россия</th>
-            <th>Великобритания</th>
-            <th>Европа</th>
-            <th>Длина ступни, см</th>
-            </tr>
-            <tr>
-            <td>34,5</td>
-            <td>3,5</td>
-            <td>36</td>
-            <td>23</td>
-            </tr>
-            <tr>
-            <td>35,5</td>
-            <td>4</td>
-            <td>36⅔</td>
-            <td>23–23,5</td>
-          </tr> */}
             <tr>
               <th>#</th>
               <th>Track</th>
@@ -79,9 +57,6 @@ function AlbumDetail() {
       </div>
     )
   }
-  return (
-    <div>AlbumDetail</div>
-  )
 }
 
 export default AlbumDetail
