@@ -30,7 +30,7 @@ function Main() {
     )
   }
   if (isSuccess) {
-    console.log(data)
+    // console.log(data)
     const coverArtIDMass = data.map((elem) => elem.coverArt)
     // const $albumMass = data.map((elem) => <CoverArt id={elem.coverArt} key={elem.coverArt} />)
     return (

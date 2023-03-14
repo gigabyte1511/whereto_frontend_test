@@ -7,7 +7,13 @@ import App from './App'
 import AlbumDetail from './components/AlbumDetail/AlbumDetail'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false, // default: true
+    },
+  },
+})
 const router = createBrowserRouter([
   {
     path: '/',
