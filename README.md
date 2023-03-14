@@ -1,8 +1,7 @@
-# Objective:
-Build a simple web application for browsing music albums.\
+## Objective:
+Build a simple web application for browsing music albums.
 
 ### Subsonic API documentation: http://www.subsonic.org/pages/api.jsp
-##### API Base Url: http://demo.subsonic.org/rest/
 
 ### Requirements:
 1. Use the Subsonic API to query for the 10 most recently added albums.
@@ -14,9 +13,15 @@ Build a simple web application for browsing music albums.\
 3. Display the title and track list for the currently selected album.
 
 ### Currently implemented:
-1. Get 10 random albums from Subsonic API and view albums in carousel
+1. Get 10 most recently added albums from Subsonic API and view albums in carousel
 2. Displaying detailed information about the album by clicking on the icon in the carousel.
 3. Scrolling the album carousel past the left or right end of the list leads to the other end. (cycle scroll)
+
+## Technology stack:
+- React
+- React router dom
+- Tanstack query
+- Subsonic API
 
 ## Getting Started with Create React App
 
