@@ -9,7 +9,7 @@ export const GET_ALBUMLIST_QUERY_KEY = 'GET_ALBUMLIST_QUERY_KEY'
 
 function Main() {
   const {
-    data, isLoading, isSuccess, isError,
+    data, error, isLoading, isSuccess, isError,
   } = useQuery({
     queryKey: [GET_ALBUMLIST_QUERY_KEY],
     queryFn: getAlbumList,
@@ -26,15 +26,13 @@ function Main() {
     return (
       <div className={styles.container}>
         <h1>
-          error
+          {`Error: ${error}`}
         </h1>
       </div>
     )
   }
   if (isSuccess) {
-    // console.log(data)
     const coverArtIDMass = data.map((elem) => elem.coverArt)
-    // const $albumMass = data.map((elem) => <CoverArt id={elem.coverArt} key={elem.coverArt} />)
     return (
       <section className={styles.container}>
         <CoverArtContainer coverArtIDMass={coverArtIDMass} />

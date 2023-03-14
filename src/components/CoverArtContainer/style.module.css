@@ -1,4 +1,5 @@
 .container{
+    position: relative;
     background-color:antiquewhite;
     border-radius: 10px;
     padding: 10px;
@@ -6,8 +7,19 @@
 .wrapper_scrollable{
     overflow-y: scroll;
     width: 615px;
+    overflow: hidden
 }
 .cover_art_container{
     display: flex;
     gap: 5px;    
+}
+.button_prev{
+    position: absolute;
+    top: 75px;
+    left: -30px;
+}
+.button_next{
+    position: absolute;
+    top: 75px;
+    right: -30px;
 }
