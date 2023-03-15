@@ -17,6 +17,7 @@ Build a simple web application for browsing music albums.
 2. Displaying detailed information about the album by clicking on the icon in the carousel.
 3. Scrolling the album carousel past the left or right end of the list leads to the other end. (cycle scroll)
 4. Album gallery have left and right buttons to scroll.
+5. The currently selected album must be in the center of the view.
 
 ## Technology stack:
 - React

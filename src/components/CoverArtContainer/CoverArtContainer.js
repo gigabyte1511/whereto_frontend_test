@@ -53,6 +53,8 @@ function CoverArtContainer({ coverArtIDMass }) {
       </div>
       <button type="button" className={styles.button_prev} onClick={() => prevAlbum()}>{'<'}</button>
       <button type="button" className={styles.button_next} onClick={() => nextAlbum()}>{'>'}</button>
+      <div className={styles.left_mask} />
+      <div className={styles.right_mask} />
     </div>
   )
 }

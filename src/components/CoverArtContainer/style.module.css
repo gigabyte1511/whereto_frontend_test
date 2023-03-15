@@ -6,6 +6,7 @@
 }
 .wrapper_scrollable{
     overflow-y: scroll;
+    /* scroll-behavior: smooth; */
     width: 615px;
     overflow: hidden
 }
@@ -22,4 +23,24 @@
     position: absolute;
     top: 75px;
     right: -30px;
+}
+.left_mask{
+    position: absolute;
+    background-color: antiquewhite;
+    border-radius: 0 5px 5px 0;
+    height: 150px;
+    width: 230px;
+    top: 10px;
+    left: 10px;
+    mask-image: linear-gradient(to right,antiquewhite, transparent);
+}
+.right_mask{
+    position: absolute;
+    background-color: antiquewhite;
+    border-radius: 5px 0 0 5px;
+    height: 150px;
+    width: 225px;
+    top: 10px;
+    right: 10px;
+    mask-image: linear-gradient(to left,antiquewhite, transparent);
 }
