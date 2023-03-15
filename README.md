@@ -13,11 +13,12 @@ Build a simple web application for browsing music albums.
 3. Display the title and track list for the currently selected album.
 
 ### Currently implemented:
-1. Get 10 most recently added albums from Subsonic API and view albums in carousel
+1. Geting 10 most recently added albums from Subsonic API and view albums in carousel
 2. Displaying detailed information about the album by clicking on the icon in the carousel.
 3. Scrolling the album carousel past the left or right end of the list leads to the other end. (cycle scroll)
 4. Album gallery have left and right buttons to scroll.
-5. The currently selected album must be in the center of the view.
+5. The currently selected album is in the center of the screen.
+6. The scrolling have animate smoothly.
 
 ## Technology stack:
 - React
