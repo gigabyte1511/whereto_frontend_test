@@ -6,9 +6,9 @@
 }
 .wrapper_scrollable{
     overflow-y: scroll;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
     width: 615px;
-    overflow: hidden
+    overflow: hidden;
 }
 .cover_art_container{
     display: flex;
