@@ -20,6 +20,7 @@ Build a simple web application for browsing music albums.
 5. The currently selected album is in the center of the screen.
 6. The scrolling have animate smoothly.
 7. Carousel libraries were not used.
+7. Selected album have a animated loading skeleton.
 
 ## Technology stack:
 - React
