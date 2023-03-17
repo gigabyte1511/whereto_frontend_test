@@ -1,13 +1,17 @@
 import { useQuery } from '@tanstack/react-query'
 import { useLocation } from 'react-router-dom'
+import {
+  useCallback,
+  useEffect, useMemo, useRef, useState,
+} from 'react'
 import { getAlbumById } from '../../Api/api'
 import styles from './style.module.css'
-
-import Loader from '../Loader/Loader'
+import AlbumDetailSkeleton from '../AlbumDetailSkeleton/AlbumDetailSkeleton'
 
 export const GET_ALBUM_BY_ID_QUERY_KEY = 'GET_ALBUM_BY_ID_QUERY_KEY'
 
 function AlbumDetail() {
+  // const [isShow, setIsShow] = useState(false)
   const { state: albumID } = useLocation()
   const {
     data, error, isLoading, isSuccess, isError,
@@ -16,11 +20,15 @@ function AlbumDetail() {
     queryFn: getAlbumById,
   })
 
+  // useEffect(() => {
+  //   setTimeout(() => { setIsShow(true) }, 500)
+  //   console.log(albumID)
+  //   return () => setIsShow(false)
+  // }, [albumID])
+
   if (isLoading) {
     return (
-      <div className={styles.container}>
-        <Loader />
-      </div>
+      <AlbumDetailSkeleton />
     )
   }
   if (isError) {
@@ -38,6 +46,10 @@ function AlbumDetail() {
       </tr>
     ))
     return (
+      // <div
+      //   className={`${styles.container} ${((isShow) ? styles.show : '')}`}
+      //   style={(isShow) ? {} : { transitionProperty: 'none' }}
+      // >
       <div className={styles.container}>
         <div className={styles.albumInfo}>
           <img src={`http://demo.subsonic.org/rest/getCoverArt?u=guest&p=guest&v=1.12.0&c=myapp&id=al-${albumID}`} alt="img" />
@@ -45,10 +57,9 @@ function AlbumDetail() {
           <h2>{data.artist}</h2>
         </div>
         <table className={styles.table}>
-          <caption>Album track list</caption>
           <tbody>
             <tr>
-              <th>#</th>
+              <th width="25">#</th>
               <th>Track</th>
             </tr>
             {$songsMass}

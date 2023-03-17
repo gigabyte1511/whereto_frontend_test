@@ -1,0 +1,123 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    gap: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+}
+.albumInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.img_container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgb(179, 179, 179);
+    height: 300px;
+    width: 300px;
+}
+.img_container img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    opacity: 0.3;
+}
+.img_container::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(to right, transparent 0%, #ebebeb 50%, transparent 100%);
+    animation: load 0.5s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+.table{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 300px;
+}
+.table::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(to right, transparent 0%, #ebebeb 50%, transparent 100%);
+    animation: load 0.5s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.table tr {
+    border-radius: 3px;
+    background-color: rgb(179, 179, 179);
+    height: 23px;
+}
+.table th{
+    border-radius: 10px 10px 3px 3px;
+    border: 1px solid #ccc;  /* границы между столбцами */
+    background-color:rgb(179, 179, 179);
+    color: rgb(110, 110, 110);
+}
+.table td{
+    padding: 3px;
+    border: 1px solid #ccc;  /* границы между столбцами */
+    border-radius: 3px;
+    color: rgb(43, 43, 43);
+}
+.album_name{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgb(179, 179, 179);
+    width: 250px;
+    height: 28px;
+}
+.album_name::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(to right, transparent 0%, #ebebeb 50%, transparent 100%);
+    animation: load 0.5s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.album_author{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgb(179, 179, 179);
+    width: 220px;
+    height: 28px;
+}
+.album_author::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(to right, transparent 0%, #ebebeb 50%, transparent 100%);
+    animation: load 0.5s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+
+@keyframes load {
+    from {
+        left: -150px;
+        } 
+        to {
+        left: 100%;
+        }
+}

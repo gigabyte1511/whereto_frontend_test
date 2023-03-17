@@ -8,6 +8,7 @@ function CoverArtContainer({ coverArtIDMass }) {
   const $scrollWrapper = useRef(null)
   const $buttonPrev = useRef(null)
   const $buttonNext = useRef(null)
+
   const [indexCounter, setIndexCounter] = useState(2)
   const [scrollCounter, setScrollCounter] = useState(1550 + 75)
 
@@ -25,9 +26,7 @@ function CoverArtContainer({ coverArtIDMass }) {
 
   // Load album info
   useEffect(() => {
-    setTimeout(() => {
-      navigate('albums', { state: coverArtIDMass[indexCounter].substring(3) })
-    }, 300)
+    navigate('albums', { state: coverArtIDMass[indexCounter].substring(3) })
   }, [indexCounter])
 
   const $artMass = coverArtIDMass.map((elem) => <CoverArt id={elem} key={elem} />)

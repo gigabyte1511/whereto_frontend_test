@@ -1,6 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import { Outlet } from 'react-router-dom'
 import { getAlbumList } from '../../Api/api'
+import AlbumDetailSkeleton from '../AlbumDetailSkeleton/AlbumDetailSkeleton'
+import AnimationTest from '../AnimationTest/AnimationTest'
 import CoverArtContainer from '../CoverArtContainer/CoverArtContainer'
 import Loader from '../Loader/Loader'
 import styles from './style.module.css'
@@ -35,6 +37,7 @@ function Main() {
     const coverArtIDMass = data.map((elem) => elem.coverArt)
     return (
       <section className={styles.container}>
+        {/* <AnimationTest /> */}
         <CoverArtContainer coverArtIDMass={coverArtIDMass} />
         <Outlet />
       </section>

@@ -3,6 +3,8 @@
     background-color:antiquewhite;
     padding: 10px;
     margin: 10px;
+    box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
+
 }
 .wrapper_scrollable{
     overflow-y: scroll;
@@ -23,6 +25,8 @@
     border-radius: 5px 0 0 5px;
     border: 0;
     padding: 10px;
+    box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
+
 }
 .button_prev:hover{
     opacity: 0.8;
@@ -36,6 +40,8 @@
     border-radius: 0px 5px 5px 0px;
     border: 0;
     padding: 10px;
+    box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
+
 }
 .button_next:hover{
     opacity: 0.8;
