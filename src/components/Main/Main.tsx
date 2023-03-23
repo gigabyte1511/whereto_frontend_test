@@ -1,15 +1,16 @@
 import { useQuery } from '@tanstack/react-query'
+import { FC } from 'react'
 import { Outlet } from 'react-router-dom'
 import { getAlbumList } from '../../Api/api'
-import AlbumDetailSkeleton from '../AlbumDetailSkeleton/AlbumDetailSkeleton'
-import AnimationTest from '../AnimationTest/AnimationTest'
 import CoverArtContainer from '../CoverArtContainer/CoverArtContainer'
-import Loader from '../Loader/Loader'
+import {Loader} from '../Loader/Loader'
 import styles from './style.module.css'
 
 export const GET_ALBUMLIST_QUERY_KEY = 'GET_ALBUMLIST_QUERY_KEY'
 
-function Main() {
+
+
+const Main: FC = ()=> {
   const {
     data, error, isLoading, isSuccess, isError,
   } = useQuery({
@@ -34,15 +35,15 @@ function Main() {
     )
   }
   if (isSuccess) {
-    const coverArtIDMass = data.map((elem) => elem.coverArt)
+    const coverArtIDMass = data.map(( elem: {coverArt:string} ) => elem.coverArt)
     return (
       <section className={styles.container}>
-        {/* <AnimationTest /> */}
         <CoverArtContainer coverArtIDMass={coverArtIDMass} />
         <Outlet />
       </section>
     )
   }
+  return <></>
 }
 
 export default Main

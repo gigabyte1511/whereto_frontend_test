@@ -1,9 +1,14 @@
+import { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './style.module.css'
 
 export const GET_ALBUMLIST_QUERY_KEY = 'GET_ALBUMLIST_QUERY_KEY'
 
-function CoverArt({ id }) {
+type CoverArtProps = {
+  id: string
+}
+
+const CoverArt: FC<CoverArtProps> = ({ id }) => {
   const navigate = useNavigate()
   const albumID = id.substring(3)
   return (

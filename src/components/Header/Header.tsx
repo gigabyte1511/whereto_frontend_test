@@ -1,6 +1,7 @@
 import styles from './style.module.css'
+import { FC } from 'react'
 
-function Header() {
+const Header: FC = () => {
   return (
     <header className={styles.container}>
       <img src="http://www.subsonic.org/pages/inc/img/subsonic_logo.png" alt="" />

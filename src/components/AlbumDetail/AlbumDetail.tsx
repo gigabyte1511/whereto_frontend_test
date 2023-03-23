@@ -1,6 +1,7 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, UseQueryResult } from '@tanstack/react-query'
 import { useLocation } from 'react-router-dom'
 import {
+  FC,
   useCallback,
   useEffect, useMemo, useRef, useState,
 } from 'react'
@@ -10,12 +11,12 @@ import AlbumDetailSkeleton from '../AlbumDetailSkeleton/AlbumDetailSkeleton'
 
 export const GET_ALBUM_BY_ID_QUERY_KEY = 'GET_ALBUM_BY_ID_QUERY_KEY'
 
-function AlbumDetail() {
+const AlbumDetail:FC = ()=> {
   // const [isShow, setIsShow] = useState(false)
   const { state: albumID } = useLocation()
   const {
     data, error, isLoading, isSuccess, isError,
-  } = useQuery({
+  }= useQuery({
     queryKey: [GET_ALBUM_BY_ID_QUERY_KEY, albumID],
     queryFn: getAlbumById,
   })
@@ -39,7 +40,7 @@ function AlbumDetail() {
     )
   }
   if (isSuccess) {
-    const $songsMass = data.song.map((song, index) => (
+    const $songsMass = data.song.map((song:{id:string, title:string}, index:number) => (
       <tr key={song.id}>
         <td>{index + 1}</td>
         <td>{song.title}</td>
@@ -68,6 +69,7 @@ function AlbumDetail() {
       </div>
     )
   }
+  return <></>
 }
 
 export default AlbumDetail

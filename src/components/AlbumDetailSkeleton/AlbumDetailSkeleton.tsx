@@ -1,6 +1,7 @@
+import { FC } from 'react'
 import styles from './style.module.css'
 
-function AlbumDetailSkeleton() {
+const AlbumDetailSkeleton: FC =()=> {
   return (
     <div className={styles.container}>
       <div className={styles.albumInfo}>

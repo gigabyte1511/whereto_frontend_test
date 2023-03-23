@@ -1,3 +1,5 @@
+# Work in progress: migration to TypeScript
+#### Branch: feat-typescript-implementation
 ## Objective:
 Build a simple web application for browsing music albums.
 
