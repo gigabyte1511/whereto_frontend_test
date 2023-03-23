@@ -1,7 +1,8 @@
 // import "./Loader.css"
+import { FC } from 'react'
 import styles from './styles.module.css'
 
-export default function Loader() {
+export const Loader: FC =()=> {
   return (
     <div className={styles.lds_roller}>
       <div />

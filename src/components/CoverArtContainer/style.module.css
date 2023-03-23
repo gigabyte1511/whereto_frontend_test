@@ -54,7 +54,7 @@
     width: 230px;
     top: 10px;
     left: 10px;
-    mask-image: linear-gradient(to right,antiquewhite, transparent);
+    -webkit-mask-image: linear-gradient(to right,antiquewhite, transparent);
 }
 .right_mask{
     position: absolute;
@@ -64,5 +64,5 @@
     width: 225px;
     top: 10px;
     right: 10px;
-    mask-image: linear-gradient(to left,antiquewhite, transparent);
+    -webkit-mask-image: linear-gradient(to left,antiquewhite, transparent);
 }

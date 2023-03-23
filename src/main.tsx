@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
 import AlbumDetail from './components/AlbumDetail/AlbumDetail'
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLDivElement)
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

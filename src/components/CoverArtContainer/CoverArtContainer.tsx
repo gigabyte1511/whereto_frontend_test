@@ -1,13 +1,17 @@
-import { useEffect, useRef, useState } from 'react'
+import { FC, UIEvent, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import CoverArt from '../CoverArt/CoverArt'
 import styles from './style.module.css'
 
-function CoverArtContainer({ coverArtIDMass }) {
+type CoverArtContainerProps = {
+  coverArtIDMass: string[]
+}
+
+const CoverArtContainer: FC<CoverArtContainerProps> =({ coverArtIDMass }) => {
   const navigate = useNavigate()
-  const $scrollWrapper = useRef(null)
-  const $buttonPrev = useRef(null)
-  const $buttonNext = useRef(null)
+  const $scrollWrapper = useRef<HTMLDivElement>(null)
+  const $buttonPrev = useRef<HTMLButtonElement>(null)
+  const $buttonNext = useRef<HTMLButtonElement>(null)
 
   const [indexCounter, setIndexCounter] = useState(2)
   const [scrollCounter, setScrollCounter] = useState(1550 + 75)
@@ -32,18 +36,21 @@ function CoverArtContainer({ coverArtIDMass }) {
   const $artMass = coverArtIDMass.map((elem) => <CoverArt id={elem} key={elem} />)
 
   // Card carousel loop emulation mechanism
-  const scrollFnc = (e) => {
+  const scrollFnc = (e: any) => {
     console.log('scroll target', e.target.scrollLeft)
-    if (e.target.scrollLeft === 75) {
-      $scrollWrapper.current.style.scrollBehavior = 'auto'
-      setScrollCounter(1550 + 75)
-    }
-    if (e.target.scrollLeft >= 3100 + 75) {
-      $scrollWrapper.current.style.scrollBehavior = 'auto'
-      setScrollCounter(1550 + 75)
+    if($scrollWrapper.current){
+
+      if (e.target.scrollLeft === 75) {
+        $scrollWrapper.current.style.scrollBehavior = 'auto'
+        setScrollCounter(1550 + 75)
+      }
+      if (e.target.scrollLeft >= 3100 + 75) {
+        $scrollWrapper.current.style.scrollBehavior = 'auto'
+        setScrollCounter(1550 + 75)
+      }
     }
   }
-  // Change album info
+    // Change album info
   const prevAlbum = () => {
     setScrollCounter((prevScrollVal) => prevScrollVal - 155)
     if (indexCounter <= 0) setIndexCounter(9)
@@ -59,7 +66,7 @@ function CoverArtContainer({ coverArtIDMass }) {
       <div
         ref={$scrollWrapper}
         className={styles.wrapper_scrollable}
-        onScroll={(e) => scrollFnc(e)}
+        onScroll={scrollFnc}
       >
         <div className={styles.cover_art_container}>
           {[$artMass, $artMass, $artMass]}
